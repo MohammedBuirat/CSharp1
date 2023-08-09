@@ -43,7 +43,7 @@ namespace Csharp1
         static void ViewProduct(ref Inventory inventory)
         {
             List<Product>? products = inventory.RetriveProducts();
-            if (products == null)
+            if (products.Count == 0)
             {
                 Console.WriteLine("Inventory is empty");
             }
@@ -51,7 +51,7 @@ namespace Csharp1
             {
                 foreach (var product in products)
                 {
-                    product.ToString();
+                    Console.WriteLine(product.ToString());
                 }
             }
         }
@@ -68,7 +68,7 @@ namespace Csharp1
             int quantity = int.Parse(Console.ReadLine());
             if (inventory.EditProduct(name, newNmae, price, quantity))
             {
-                Console.WriteLine("Product name was updated");
+                Console.WriteLine("Product was updated");
             }
             else
             {
@@ -88,7 +88,7 @@ namespace Csharp1
             }
             else
             {
-                Console.WriteLine(product.ToString);
+                Console.WriteLine(product.ToString());
             }
         }
         static void Main(string[] args)
@@ -130,6 +130,7 @@ namespace Csharp1
 
                 }
                 Console.WriteLine("\n\n");
+                Console.WriteLine("*************************************************************************");
             }
         }
     }

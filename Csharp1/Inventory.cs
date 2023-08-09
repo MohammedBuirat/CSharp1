@@ -47,12 +47,6 @@ namespace Csharp1
             }
         }
 
-        public Product? GetProduct(string name)
-        {
-            if (!Products.ContainsKey(name)) return null;
-            else return Products[name];
-        }
-
         public bool DeleteProduct(string name)
         {
             if (!Products.ContainsKey(name)) return false;
@@ -62,7 +56,8 @@ namespace Csharp1
 
         public Product? SearchProduct(string? name)
         {
-            return (Products.ContainsKey(name)) ? Products[name] : null;
+            if (!Products.ContainsKey(name)) return null;
+            else return Products[name];
         }
 
         public List<Product>? RetriveProducts()
