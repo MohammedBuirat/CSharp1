@@ -58,7 +58,22 @@ namespace Csharp1
 
         static void EditProduct(ref Inventory inventory)
         {
-
+            Console.WriteLine("Please enter the product that you want to edit name:");
+            string name = Console.ReadLine();
+            Console.WriteLine("Please enter the product new name:");
+            string newNmae = Console.ReadLine();
+            Console.WriteLine("Please enter the product new price:");
+            decimal price = decimal.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter the product new quantity:");
+            int quantity = int.Parse(Console.ReadLine());
+            if (inventory.EditProduct(name, newNmae, price, quantity))
+            {
+                Console.WriteLine("Product name was updated");
+            }
+            else
+            {
+                Console.WriteLine("either the name does not exist or you entered a invalid value");
+            }
 
         }
 
