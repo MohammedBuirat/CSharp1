@@ -79,7 +79,17 @@ namespace Csharp1
 
         static void SearchProduct(ref Inventory inventory)
         {
-
+            Console.WriteLine("Please enter the product name");
+            string name = Console.ReadLine();
+            Product product = inventory.SearchProduct(name);
+            if (product == null)
+            {
+                Console.WriteLine("Product does not exist");
+            }
+            else
+            {
+                Console.WriteLine(product.ToString);
+            }
         }
         static void Main(string[] args)
         {
