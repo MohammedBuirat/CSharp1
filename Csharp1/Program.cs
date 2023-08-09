@@ -28,7 +28,16 @@ namespace Csharp1
 
         static void removeProduct(ref Inventory inventory)
         {
-
+            Console.WriteLine("Please enter the name of the Product");
+            string name = Console.ReadLine();
+            if (inventory.DeleteProduct(name))
+            {
+                Console.WriteLine("Product deleted successfully");
+            }
+            else
+            {
+                Console.WriteLine("Product with the given name does not exist");
+            }
         }
 
         static void ViewProduct(ref Inventory inventory)
