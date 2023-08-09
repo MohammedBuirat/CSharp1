@@ -10,34 +10,47 @@ namespace Csharp1
     {
         static void AddProduct(ref Inventory inventory)
         {
-            
+            Console.WriteLine("Please enter the new product name:");
+            string name = Console.ReadLine();
+            Console.WriteLine("Please enter the new product price:");
+            decimal price = decimal.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter the new product quantity:");
+            int quantity = int.Parse(Console.ReadLine());
+            if (inventory.AddProduct(new Product(name, price, quantity)))
+            {
+                Console.WriteLine("Product added successfully");
+            }
+            else
+            {
+                Console.WriteLine("Product alredy exists");
+            }
         }
 
         static void removeProduct(ref Inventory inventory)
         {
-            
+
         }
 
         static void ViewProduct(ref Inventory inventory)
         {
-            
+
         }
 
         static void EditProduct(ref Inventory inventory)
         {
-            
+
 
         }
 
         static void SearchProduct(ref Inventory inventory)
         {
-            
+
         }
         static void Main(string[] args)
         {
-            Inventory inventory= new Inventory();
+            Inventory inventory = new Inventory();
             int option = 0;
-            while (option!=6)
+            while (option != 6)
             {
                 Console.WriteLine("Please pick an option");
                 Console.WriteLine("1) Add a product.");
