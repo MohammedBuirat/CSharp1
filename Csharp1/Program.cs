@@ -10,7 +10,7 @@ namespace Csharp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("HIII");
+
         }
     }
 }
