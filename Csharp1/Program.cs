@@ -42,7 +42,18 @@ namespace Csharp1
 
         static void ViewProduct(ref Inventory inventory)
         {
-
+            List<Product>? products = inventory.RetriveProducts();
+            if (products == null)
+            {
+                Console.WriteLine("Inventory is empty");
+            }
+            else
+            {
+                foreach (var product in products)
+                {
+                    product.ToString();
+                }
+            }
         }
 
         static void EditProduct(ref Inventory inventory)
