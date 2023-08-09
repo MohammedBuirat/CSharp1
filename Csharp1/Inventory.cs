@@ -60,7 +60,7 @@ namespace Csharp1
             return true;
         }
 
-        public Product? SearchProduct(string name)
+        public Product? SearchProduct(string? name)
         {
             return (Products.ContainsKey(name)) ? Products[name] : null;
         }
